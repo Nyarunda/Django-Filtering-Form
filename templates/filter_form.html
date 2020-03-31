@@ -1,0 +1,116 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Django Filter Form</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/855c5d55c1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body >
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">React</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+     <main role="main" class="container">
+
+      <h3>Filter Journal</h3>
+      <form method="GET" action=".">
+        <div class="form-row">
+          <div class="form-group col-12">
+            <div class="input-group">
+              <input class="form-control py-2 border-right-0" type="Search" name="title_contains" placeholder="Title contains..."/>
+              <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                  <i class="fa fa-search"></i>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <div class="input-group">
+              <input class="form-control py-2 border-right-0" type="Search" name="title_exact" placeholder="Title exact..."/>
+              <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                  <i class="fa fa-search"></i>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-12">
+            <div class="input-group">
+              <input class="form-control py-2 border-right-0" type="Search" name="title_author" placeholder="Title or Author..."/>
+              <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                  <i class="fa fa-search"></i>
+                </div> 
+              </span>
+            </div>
+          </div>
+        </div>
+        
+      <div class="form-row">
+        <div class="form-group col-md-2 col-lg-2">
+          <label for="viewCountMin">Minimum View Count</label>
+          <input type="number" min="0" class="form-control" id="viewCountMin" name="view_count_min" placeholder="0">
+        </div>
+        <div class="form-group col-md-2 col-lg-2">
+          <label for="viewCountMax">Maximum View Count</label>
+          <input type="number" min="0" class="form-control" id="viewCountMax" name="view_count_max" placeholder="10000">
+        </div>
+        <div class="form-group col-md-2 col-lg-2">
+          <label for="publishDateMin">Publish Date Minimum</label>
+          <input type="date" class="form-control" id="publishDateMin" name="publish_date_min">
+        </div>
+        <div class="form-group col-md-2 col-lg-2">
+          <label for="publishDateMax">Publish Date Maximum</label>
+          <input type="date" class="form-control" id="publishDateMax" name="publish_date_max">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Category</label>
+          <select id="inputState" class="form-control" name="category">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="reviewed" name="reviewed">
+          <label class="form-check-label" for="reviewed">
+            Reviewed
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+  </main>
+</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>
