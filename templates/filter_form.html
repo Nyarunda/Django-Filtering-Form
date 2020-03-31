@@ -50,7 +50,7 @@
         <div class="form-row">
           <div class="form-group col-12">
             <div class="input-group">
-              <input class="form-control py-2 border-right-0" type="Search" name="title_exact" placeholder="Title exact..."/>
+              <input class="form-control py-2 border-right-0" type="Search" name="id_exact" placeholder="Title exact..."/>
               <span class="input-group-append">
                 <div class="input-group-text bg-transparent">
                   <i class="fa fa-search"></i>
@@ -107,7 +107,27 @@
       </div>
       <button type="submit" class="btn btn-primary">Search</button>
     </form>
+         <hr />
+         <div class="row">
+            <ul>
+                 {% for journal in query %}
+                     <li>
+                         {{ journal.title }}
+                         <span>Author: {{ journal.author.name.capitalize }}</span>
+                         <span>
+                            {% for foo in journal.categories.all %}
+                                {{ foo }}
+                            {% endfor %}
+                         </span>
 
+                         <span>Publish Date: {{ journal.publish_date }}</span>
+                         <span>View Number: {{ journal.views }}</span>
+                         <span>Reviewed: {{ journal.reviewed }}</span>
+                     </li><hr />
+                 {% endfor %}
+
+            </ul>
+         </div>
   </main>
 </body>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
